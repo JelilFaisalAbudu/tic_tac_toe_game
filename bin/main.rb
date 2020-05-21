@@ -19,7 +19,19 @@ else
 end
 
 # play_record = {} # Record the players' input in the hash to represent an array.
+
 # current_board = Board.new(player_one, player_two)
+puts '1 | 2 | 3'
+puts '4 | 5 | 6'
+puts '7 | 8 | 9'
+puts ''
+puts 'player X turn'
+winner = false
+count = 0
+while count < 10 && !winner
+gets.chomp
+count += 1
+end
 # display_board(current_board)
 # play(player_one, player_two, current_board)
 # check_results(player_one, player_two, play_record)
