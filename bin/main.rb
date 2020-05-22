@@ -68,7 +68,7 @@ while count < 9 && !winner
   while !played_one && played_two
     puts 'Player One turn Please choose between 1...9'
     player_one_choice = gets.chomp # Read player option from the user
-    next unless check_input.include?(player_one_choice)
+    next unless !check_input.include?(player_one_choice)
     input_arr.push([input_symb1, player_one_choice]) # unless !check_input.include?(player_one)
     check_input.delete(player_one_choice)
     count += 1
@@ -78,7 +78,7 @@ while count < 9 && !winner
   while !played_two && played_one
     puts 'Player Two turn Please choose between 1...9'
     player_two_choice = gets.chomp # Read player option from the user
-    next unless check_input.include?(player_two_choice)
+    next unless !check_input.include?(player_two_choice)
 
     input_arr.push([input_symb2, player_two_choice]) # unless !check_input.include?(player_one)
     check_input.delete(player_two_choice)
