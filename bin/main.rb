@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+# rubocop :disable Metrics/BlockNesting
+
 def display_board(board_cells)
   puts "#{board_cells[1]} | #{board_cells[2]} | #{board_cells[3]}"
   puts '__|___|__'
@@ -29,4 +31,60 @@ input_symb2 = if input_symb1 == 'O'
 
 puts "Your opponent will play with the game #{input_symb2}"
 
-# rubocop :enable
+puts ''
+winner = false
+played = false
+
+count = 0
+
+while count < 9 && !winner
+  display_board(board)
+  if !played
+    puts 'Player X\'s move. Please choose between 1...9'
+    player_one = gets.chomp.to_i # Read player option from the user
+    is_valid_choice = player_one >= 1 && player_one <= 9
+    valid_move = board[player_one] != 'X' && board[player_one] != 'O'
+    until is_valid_choice && valid_move
+      display_board(board)
+      if !valid_move
+        puts 'Sorry! Cell already occupied. Please select the right cell.'
+      else
+        puts 'Invalid! You can only use cell numbers from cell 1..9'
+        puts 'Select a valid cell number.'
+      end
+      player_one = gets.chomp.to_i
+      is_valid_choice = player_one >= 1 && player_one <= 9
+      valid_move = board[player_one] != 'X' && board[player_one] != 'O'
+    end
+
+    board[player_one] = input_symb1
+
+    count += 1
+    played = true
+  else
+    puts 'Player O\'s move. Please choose between 1...9'
+
+    player_two = gets.chomp.to_i # Read player option from the user
+    is_valid_choice = player_two >= 1 && player_two <= 9
+    valid_move = board[player_two] != 'X' && board[player_two] != 'O'
+    until is_valid_choice && valid_move
+      display_board(board)
+      if !valid_move
+        puts 'Sorry! Cell already occupied. Please select the right cell.'
+      else
+        puts 'Invalid! You can only use cell numbers from cell 1..9'
+        puts 'Select a valid cell number.'
+      end
+      player_two = gets.chomp.to_i
+      is_valid_choice = player_two >= 1 && player_two <= 9
+      valid_move = board[player_two] != 'X' && board[player_two] != 'O'
+    end
+    board[player_two] = input_symb2
+    count += 1
+    played = false
+
+  end
+
+end
+
+# rubocop :enable Metrics/BlockNesting
