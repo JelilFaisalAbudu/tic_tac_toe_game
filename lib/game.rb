@@ -1,51 +1,59 @@
-class Board
-  attr_accessor :board
-
-  def initialize
-    @board = ['', 'X', 'X', 3, 4, 5, 6, 'O', 'O', 9]
+class Game
+  attr_reader :players, :board_instance, :current_player, :other_player
+  def initialize(players, board = Board.new)
+    @players = players
+    @board_instance = board
+    @players_names = @players.keys
+    @players_markers = @players.values
+    @current_player, @other_player = @players_names.shuffle
   end
 
-  attr_reader :board
-
-  def draw_board
-    "
-         |     |
-      #{@board[1]}  |  #{@board[2]}  |  #{@board[3]}
-    _____|_____|_____
-         |     |
-      #{@board[4]}  |  #{@board[5]}  |  #{@board[6]}
-    _____|_____|_____
-         |     |
-      #{@board[7]}  |  #{@board[8]}  |  #{@board[9]}
-         |     |
-    "
+  def switch_players
+    @current_player, @other_player = @other_player, @current_player
   end
 
-  def display_board
-    draw_board
+  def display_game_board
+    @board_instance.display_board
   end
 
-  def update_board(marker, pos)
-    @board[pos] = marker
+  def make_a_move
+    puts 'make a move'
+    @pos = gets.chomp.to_i
+    if @board_instance.valid_move?(@pos)
+      @board_instance.update_board(@players[@current_player], @pos)
+    else
+      puts 'It is an invalid move.'
+    end
   end
 
-  def win_comb
-    [
-      [@board[1], @board[2], @board[3]],
-      [@board[4], @board[5], @board[6]],
-      [@board[7], @board[8], @board[9]]
-    ]
+  def winner?(player_marker)
+    @board_instance.win_comb.each do |group|
+      return true if group.all?(player_marker)
+    end
+    false
   end
 
-  def position_taken?(index)
-    @board[index].is_a?(String)
+  def draw?
+    @last_index = @players.size - 1
+    @board_instance.board.all?(String)
   end
 
-  def in_range?(index)
-    index.between?(1, 9)
-  end
-
-  def valid_move?(index)
-    in_range?(index) && !position_taken?(index)
+  def play
+    puts "#{current_player} has randomly been selected as the first player"
+    loop do
+      # display_game_board
+      make_a_move
+      if winner?(@players[@current_player])
+        puts "#{@players.key(@current_player)} wins"
+        # puts game_over_message
+        # display_game_board
+        return
+      elsif draw?
+        puts 'It is draw'
+        return
+      else
+        switch_players
+      end
+    end
   end
 end
