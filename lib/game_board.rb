@@ -24,6 +24,10 @@ class Board
     draw_board
   end
 
+  def update_board(marker, pos)
+    @board[pos] = marker
+  end
+
   def winner?(player_marker)
     (@board[1] == player_marker && @board[2] == player_marker && @board[3] == player_marker) ||
       (@board[4] == player_marker && @board[5] == player_marker && @board[6] == player_marker) ||
