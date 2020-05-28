@@ -1,53 +1,51 @@
-class Game
-  attr_reader :players, :board_instance, :current_player, :other_player
-  def initialize(players, board = Board.new)
-    @players = players
-    @board_instance = board
-    @players_names = @players.keys
-    @players_markers = @players.values
-    @current_player, @other_player = @players_names.shuffle
+class Board
+  attr_accessor :board
+
+  def initialize
+    @board = ['', 'X', 'X', 3, 4, 5, 6, 'O', 'O', 9]
   end
 
-  def switch_players
-    @current_player, @other_player = @other_player, @current_player
+  attr_reader :board
+
+  def draw_board
+    "
+         |     |
+      #{@board[1]}  |  #{@board[2]}  |  #{@board[3]}
+    _____|_____|_____
+         |     |
+      #{@board[4]}  |  #{@board[5]}  |  #{@board[6]}
+    _____|_____|_____
+         |     |
+      #{@board[7]}  |  #{@board[8]}  |  #{@board[9]}
+         |     |
+    "
   end
 
-  def display_game_board
-    @board_instance.display_board
+  def display_board
+    draw_board
   end
 
-  # def make_move
-  #   @cell_pos = gets.chomp.to_i
-  #   if @board_instance.valid_move?(@cell_pos)
-  #      @board_instance.update_board(@players[current_player], @cell_pos)
-  #   else
-  #     make_move
-  #     puts display_game_board
-  #   end
-  # end
-
-  def make_a_move
-    puts 'make a move'
-    @pos = gets.chomp.to_i
-    if @board_instance.valid_move?(@pos)
-      @board_instance.update_board(@players[@current_player], @pos)
-    else
-      puts 'It is an invalid move.'
-    end
+  def update_board(marker, pos)
+    @board[pos] = marker
   end
 
-  def play
-    puts "#{current_player.name} has randomly been selected as the first player"
-    loop do
-      # display_game_board
-      make_a_move
-      if @board_instance.game_over
-        puts game_over_message
-        # display_game_board
-        return
-      else
-        switch_players
-      end
-    end
+  def win_comb
+    [
+      [@board[1], @board[2], @board[3]],
+      [@board[4], @board[5], @board[6]],
+      [@board[7], @board[8], @board[9]]
+    ]
+  end
+
+  def position_taken?(index)
+    @board[index].is_a?(String)
+  end
+
+  def in_range?(index)
+    index.between?(1, 9)
+  end
+
+  def valid_move?(index)
+    in_range?(index) && !position_taken?(index)
   end
 end
