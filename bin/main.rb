@@ -1,5 +1,8 @@
 #!/usr/bin/env ruby
 
+require_relative 'lib/game_board.rb'
+require_relative 'lib/player.rb'
+
 puts '----------Welcome to Tic-Tac-Toe game----------'
 puts 'Please choose a name and favourite letters to play with.'
 
