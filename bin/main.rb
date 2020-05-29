@@ -25,7 +25,7 @@ puts "#{name_two}, your marker is #{letter_two}."
 puts ''
 
 player_two = Player.new(name_two, letter_two)
-players = {player_one.player_name=> player_one.player_marker, player_two.player_name=> player_two.player_marker}
+players = { player_one.player_name => player_one.player_marker, player_two.player_name => player_two.player_marker }
 
 game = Game.new(players)
 play_again = true
