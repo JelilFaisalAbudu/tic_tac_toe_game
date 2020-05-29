@@ -1,11 +1,11 @@
 class Game
-  attr_reader :players, :board_instance, :current_player, :other_player
-  def initialize(players, board = Board.new)
+  attr_reader :players, :board_instance, :current_player, :other_player, :message_instance
+  def initialize(players, board = Board.new, message = Message.new)
     @players = players
     @board_instance = board
+    @message_instance = message
     @players_names = @players.keys
     @players_markers = @players.values
-    @current_player, @other_player = @players_names.shuffle
   end
 
   def switch_players
@@ -17,12 +17,14 @@ class Game
   end
 
   def make_a_move
-    puts 'make a move'
+    @message_instance.move_msg_to(current_player) # msg(move_msg)
     @pos = gets.chomp.to_i
     if @board_instance.valid_move?(@pos)
       @board_instance.update_board(@players[@current_player], @pos)
     else
-      puts 'It is an invalid move.'
+      @board_instance.display_board
+      @message_instance.invalid_move_msg # msg(invalid_msg)
+      make_a_move
     end
   end
 
@@ -39,21 +41,27 @@ class Game
   end
 
   def play
-    puts "#{current_player} has randomly been selected as the first player"
+    @current_player, @other_player = @players_names.shuffle
+    @message_instance.first_player(current_player)
+    @message_instance.give_msg(display_game_board)
     loop do
-      # display_game_board
       make_a_move
       if winner?(@players[@current_player])
-        puts "#{@players.key(@current_player)} wins"
-        # puts game_over_message
-        # display_game_board
+        @message_instance.give_msg(display_game_board)
+        @message_instance.win_msg(current_player)
         return
       elsif draw?
-        puts 'It is draw'
+        @message_instance.give_msg(display_game_board)
+        @message_instance.draw_msg
         return
       else
         switch_players
       end
+      @message_instance.give_msg(display_game_board)
     end
+  end
+
+  def reset_game_board
+    @board_instance.board = ['', 1, 2, 3, 4, 5, 6, 7, 8, 9]
   end
 end
