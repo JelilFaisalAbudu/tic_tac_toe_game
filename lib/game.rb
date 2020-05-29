@@ -1,5 +1,5 @@
-require_relative 'lib/game_board.rb'
-require_relative 'lib/message.rb'
+require_relative './game_board.rb'
+require_relative './message.rb'
 
 class Game
   attr_reader :players, :board_instance, :current_player, :other_player, :message_instance
