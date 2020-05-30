@@ -9,6 +9,11 @@ class Game
     @message_instance = message
     @players_names = @players.keys
     @players_markers = @players.values
+    @current_player, @other_player = @players_names.shuffle
+  end
+
+  def shuffle_players
+    @current_player, @other_player = @players_names.shuffle
   end
 
   def switch_players
@@ -17,18 +22,6 @@ class Game
 
   def display_game_board
     @board_instance.display_board
-  end
-
-  def make_a_move
-    @message_instance.move_msg_to(current_player) # msg(move_msg)
-    @pos = gets.chomp.to_i
-    if @board_instance.valid_move?(@pos)
-      @board_instance.update_board(@players[@current_player], @pos)
-    else
-      @board_instance.display_board
-      @message_instance.invalid_move_msg # msg(invalid_msg)
-      make_a_move
-    end
   end
 
   def winner?(player_marker)
@@ -41,27 +34,6 @@ class Game
   def draw?
     @last_index = @players.size - 1
     @board_instance.board.all?(String)
-  end
-
-  def play
-    @current_player, @other_player = @players_names.shuffle
-    @message_instance.first_player(current_player)
-    @message_instance.give_msg(display_game_board)
-    loop do
-      make_a_move
-      if winner?(@players[@current_player])
-        @message_instance.give_msg(display_game_board)
-        @message_instance.win_msg(current_player)
-        return
-      elsif draw?
-        @message_instance.give_msg(display_game_board)
-        @message_instance.draw_msg
-        return
-      else
-        switch_players
-      end
-      @message_instance.give_msg(display_game_board)
-    end
   end
 
   def reset_game_board
