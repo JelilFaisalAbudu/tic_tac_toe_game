@@ -2,13 +2,11 @@
 
  > A quick classic mini game to play by command line.
 
-<br>The aim of the project is object oriented programming concepts.<br>
+- The aim of the project is object oriented programming concepts.
 The project specifications can be seen in [Odin Project](https://www.theodinproject.com/courses/ruby-programming/lessons/oop)
-
 
 ## Content
 
-- [Requirements](#requirements)
 - [Built With](#built-with)
 - [Live Demo](#live-demo)
 - [Quick Start](#quick-start)
@@ -25,10 +23,6 @@ The project specifications can be seen in [Odin Project](https://www.theodinproj
 - The game ends when someone gets 3 marks in a row
 - The row can be vertical, horizontal or diagonal
 
-## Requirements
-
-
-
 <ul>
   <h3>Features</h3>
   <li>Get a valid user input</li>
@@ -37,11 +31,12 @@ The project specifications can be seen in [Odin Project](https://www.theodinproj
   <li>End game if board becomes full</li>
 </ul>
 
-### Built With
+## Built With
 
-- Ruby <br>
-- Rubocop (Linter) with Stickler (CI Tool)<br>
-- Git (with Gitflow), Github and VScode <br>
+- Ruby 2.6.5
+- VScode
+- Rubocop (Linter) with Stickler (CI Tool)
+- Git (with Gitflow),
 
 ## Live Demo
 
@@ -52,7 +47,10 @@ To play online, go to the page and hit (Run) button.
 
 ### Get a local copy with
 
+```js
 git clone https://github.com/JelilFaisalAbudu/tic_tac_toe_game
+
+```
 
 Or just hit (Download Zip) on green button (Clone or Download) on top of this page.
 
@@ -74,7 +72,7 @@ For linux:
 
 ```js
 
-bin / main.rb;
+bin/main.rb;
 
 ```
 
@@ -100,6 +98,6 @@ A special thanks for the code reviewers.
 - Twitter: [@JelilAbudu](https://twitter.com/jelilabudu)
 - Linkedin: [jelilfaisalabudu](https://linkedin.com/in/jelilfaisalabudu)
 
-### License
+## License
 
 - Creative Commons
