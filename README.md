@@ -7,7 +7,7 @@
 ```html
 
 <br>The aim of the project is object oriented programming concepts.<br>
-The project specifications can be seen in [Odin Project](https://www.theodinproject.com/courses/ruby-programming/lessons/oop)
+The project specifications can be seen in [Odin Project]("https://www.theodinproject.com/courses/ruby-programming/lessons/oop")
 
 ```
 
@@ -51,7 +51,7 @@ The project specifications can be seen in [Odin Project](https://www.theodinproj
 ## Live Demo
 
 To play online, go to the page and hit (Run) button.
-[Run on Repl.it](https://repl.it/@NiiazalyDzhumal/tictactoe)
+[Run on Repl.it](https://tic-tac-toe.jelilfaisalabud.repl.run/)
 
 ## Quick Start
 
@@ -97,7 +97,7 @@ Ruby 2.5.5
 
 Contributions, issues and feature requests are welcome!
 
-You can do it on [issues page](https://github.com/NiiazalyDzhumaliev/tic_tac_toe/issues).
+You can do it on [issues page]("https://github.com/JelilFaisalAbudu/tic_tac_toe_game/issues").
 
 ## Acknowledgments
 
@@ -107,9 +107,9 @@ A special thanks for the code reviewers.
 
 👤 **Jelil Faisal Abudu**
 
-- Github: [@JelilFaisalAbudu](https://github.com/JelilFaisalAbudu)
-- Twitter: [@JelilAbudu](https://twitter.com/jelilabudu)
-- Linkedin: [jelilfaisalabudu](https://linkedin.com/in/jelilfaisalabudu)
+- Github: [@JelilFaisalAbudu]("https://github.com/JelilFaisalAbudu")
+- Twitter: [@JelilAbudu]("https://twitter.com/jelilabudu")
+- Linkedin: [jelilfaisalabudu]("https://linkedin.com/in/jelilfaisalabudu")
 
 ### License
 
