@@ -2,7 +2,7 @@
 
  > A quick classic mini game to play by command line.
 
-- The aim of the project is object oriented programming concepts.
+- The aim of the project is to learn and apply object oriented programming concepts.
 The project specifications can be seen in [Odin Project](https://www.theodinproject.com/courses/ruby-programming/lessons/oop)
 
 ## Content
