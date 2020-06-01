@@ -87,7 +87,8 @@ You can do it on [issues page](https://github.com/JelilFaisalAbudu/tic_tac_toe_g
 
 ## Acknowledgments
 
-A special thanks for the code reviewers.
+- [Odin Project](https://www.theodinproject.com/courses/ruby-programming/lessons/oop)
+- A special thanks for the code reviewers.
 
 ## Author
 
