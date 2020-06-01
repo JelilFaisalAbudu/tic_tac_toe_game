@@ -40,8 +40,7 @@ The project specifications can be seen in [Odin Project](https://www.theodinproj
 
 ## Live Demo
 
-To play online, go to the page and hit (Run) button.
-[Run on Repl.it](https://tic-tac-toe.jelilfaisalabud.repl.run/)
+You can play the live demo using this link: [Run on Repl.it](https://tic-tac-toe.jelilfaisalabud.repl.run/)
 
 ## Quick Start
 
