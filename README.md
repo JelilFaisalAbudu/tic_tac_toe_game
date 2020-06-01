@@ -1,5 +1,7 @@
 # Tic Tac Toe
 
+## About This Project
+
  > A quick classic mini game to play by command line.
 
 - The aim of the project is to learn and apply object oriented programming concepts.
@@ -7,6 +9,7 @@ The project specifications can be seen in [Odin Project](https://www.theodinproj
 
 ## Content
 
+- [About this Project](#about-this-project)
 - [Built With](#built-with)
 - [Live Demo](#live-demo)
 - [Quick Start](#quick-start)
