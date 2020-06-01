@@ -1,13 +1,10 @@
 # Tic Tac Toe
 
- A quick classic mini game to play by command line.
-
-```html
+ > A quick classic mini game to play by command line.
 
 <br>The aim of the project is object oriented programming concepts.<br>
 The project specifications can be seen in [Odin Project](https://www.theodinproject.com/courses/ruby-programming/lessons/oop)
 
-```
 
 ## Content
 
@@ -30,7 +27,7 @@ The project specifications can be seen in [Odin Project](https://www.theodinproj
 
 ## Requirements
 
-```html
+
 
 <ul>
   <h3>Features</h3>
@@ -53,15 +50,9 @@ To play online, go to the page and hit (Run) button.
 
 ## Quick Start
 
-#### Get a local copy with:<br>
-
-```
-
-```js
+### Get a local copy with
 
 git clone https://github.com/JelilFaisalAbudu/tic_tac_toe_game
-
-```
 
 Or just hit (Download Zip) on green button (Clone or Download) on top of this page.
 
