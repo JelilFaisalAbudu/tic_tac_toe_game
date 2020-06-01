@@ -2,12 +2,10 @@
 
  A quick classic mini game to play by command line.
 
-![screenshot](#)
-
 ```html
 
 <br>The aim of the project is object oriented programming concepts.<br>
-The project specifications can be seen in [Odin Project]("https://www.theodinproject.com/courses/ruby-programming/lessons/oop")
+The project specifications can be seen in [Odin Project](https://www.theodinproject.com/courses/ruby-programming/lessons/oop)
 
 ```
 
@@ -97,7 +95,7 @@ Ruby 2.5.5
 
 Contributions, issues and feature requests are welcome!
 
-You can do it on [issues page]("https://github.com/JelilFaisalAbudu/tic_tac_toe_game/issues").
+You can do it on [issues page](https://github.com/JelilFaisalAbudu/tic_tac_toe_game/issues).
 
 ## Acknowledgments
 
@@ -107,9 +105,9 @@ A special thanks for the code reviewers.
 
 👤 **Jelil Faisal Abudu**
 
-- Github: [@JelilFaisalAbudu]("https://github.com/JelilFaisalAbudu")
-- Twitter: [@JelilAbudu]("https://twitter.com/jelilabudu")
-- Linkedin: [jelilfaisalabudu]("https://linkedin.com/in/jelilfaisalabudu")
+- Github: [@JelilFaisalAbudu](https://github.com/JelilFaisalAbudu)
+- Twitter: [@JelilAbudu](https://twitter.com/jelilabudu)
+- Linkedin: [jelilfaisalabudu](https://linkedin.com/in/jelilfaisalabudu)
 
 ### License
 
