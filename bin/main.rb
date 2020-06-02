@@ -19,7 +19,11 @@ player_one = Player.new(name_one, letter_one)
 
 puts 'Second player\'s name'
 name_two = gets.chomp.capitalize!
-
+while [name_one].include?(name_two)
+  puts "#The name {name_one} already exists."
+  puts 'Second player\'s name'
+name_two = gets.chomp.capitalize!
+end
 puts "#{name_one}, your marker is #{letter_one}."
 puts "#{name_two}, your marker is #{letter_two}."
 puts ''
