@@ -48,9 +48,39 @@ describe Board do
     end
   end
 
-  context '#draw_board' do
+  context '#display_board' do
     it 'returns true if the wrong game board is displayed ' do
       expect(game_board.display_board).not_to eql(false_board)
+    end
+  end
+
+  context '#in_range?' do
+    it 'returns true if the chosen position is within bounds' do
+      expect(game_board.in_range?(9)).to eql(true)
+    end
+  end
+
+  context '#in_range?' do
+    it 'returns false if the chosen position is out of bounds' do
+      expect(game_board.in_range?(0)).to eql(false)
+    end
+  end
+
+  # context '#position_taken?' do
+  #   it ' ' do
+  #     expect(game_board)
+  #   end
+  # end
+
+  context '#update_board' do
+    it 'returns the player\'s marker of that index after it has been updated' do
+      expect(game_board.update_board('X', 6)).to eql('X')
+    end
+  end
+
+  context '#update_board' do
+    it 'returns the player\'s marker of that index after it has been updated' do
+      expect(game_board.update_board('X', 6)).not_to eql('O')
     end
   end
 end
