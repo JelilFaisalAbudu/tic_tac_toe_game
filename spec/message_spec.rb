@@ -13,7 +13,13 @@ describe Message do
     let(:msg) { 'Jelil has randomly been selected as the first player.' }
 
     it 'returns a hard coded message with the value of the argument given' do
-      expect(message.first_player('Jelil')).to eql('msg')
+      expect(message.first_player('Jelil')).to eql(msg)
+    end
+  end
+
+  context '#move_msg_to' do
+    it 'returns a hard coded message with the value of the argument given' do
+      expect(message.move_msg_to('Jelil')).to eql('Jelil, make your move')
     end
   end
 end
