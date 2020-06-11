@@ -9,7 +9,8 @@ class Game
     @message_instance = message
     @players_names = @players.keys
     @players_markers = @players.values
-    @current_player, @other_player = @players_names.shuffle
+    @current_player = @players_names[0]
+    @other_player = @players_names[1]
   end
 
   def shuffle_players
