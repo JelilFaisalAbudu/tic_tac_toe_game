@@ -40,7 +40,28 @@ describe Game do
     end
 
     it 'returns true if the actual game board is displayed' do
-      expect(game.display_game_board).to eql(true_board) 
+      expect(game.display_game_board).to eql(true_board)
+    end
+  end
+
+  context '#winner?' do
+    it 'returns true for every win combination found' do
+      game.board_instance.board = ['', 'X', 'O', 3, 4, 'X', 6, 7, 'O', 'X']
+      expect(game.winner?('X')).to eql(true)
+    end
+  end
+
+  context '#winner?' do
+    it 'returns true for every win combination found' do
+      game.board_instance.board = ['', 'X', 'O', 3, 4, 'X', 6, 'X', 'O', 'O']
+      expect(game.winner?('X')).to eql(false)
+    end
+  end
+
+  context '#draw?' do
+    it 'returns true if all positions on the board are occupied' do
+      game.board_instance.board = ['', 'X', 'O', 'X', 'O', 'O', 'X', 'O', 'O', 'X']
+      expect(game.winner?('X')).to eql(true)
     end
   end
 end
