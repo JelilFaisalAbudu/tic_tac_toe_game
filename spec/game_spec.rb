@@ -61,7 +61,14 @@ describe Game do
   context '#draw?' do
     it 'returns true if all positions on the board are occupied' do
       game.board_instance.board = ['', 'X', 'O', 'X', 'O', 'O', 'X', 'O', 'O', 'X']
-      expect(game.draw?('X')).to eql(true)
+      expect(game.draw?).to eql(true)
+    end
+  end
+
+  context '#draw?' do
+    it 'returns false if all positions on the board are not occupied' do
+      game.board_instance.board = ['', 'X', 'O', 'X', 4, 'O', 'X', 'O', 'O', 9]
+      expect(game.draw?).to eql(false)
     end
   end
 end
