@@ -66,11 +66,18 @@ describe Board do
     end
   end
 
-  # context '#position_taken?' do
-  #   it ' ' do
-  #     expect(game_board)
-  #   end
-  # end
+  context '#position_taken?' do
+    it 'returns false for all the positions not taken by the player' do
+      expect(game_board.position_taken?(4)).to eql(false)
+    end
+  end
+
+  context '#position_taken?' do
+    it 'returns true for all the positions not taken by the player' do
+      game_board.update_board('X', 2)
+      expect(game_board.position_taken?(2)).to eql(true)
+    end
+  end
 
   context '#update_board' do
     it 'returns the player\'s marker of that index after it has been updated' do
