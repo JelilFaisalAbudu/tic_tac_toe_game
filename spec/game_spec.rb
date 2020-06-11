@@ -22,4 +22,25 @@ describe Game do
       expect(game.switch_players).not_to eql(%w[Jelil Astero])
     end
   end
+
+  context '#display_game_board' do
+    let(:board_cell) { ['', 1, 2, 3, 4, 5, 6, 7, 8, 9] }
+    let(:true_board) do
+      "
+         |     |
+      #{board_cell[1]}  |  #{board_cell[2]}  |  #{board_cell[3]}
+    _____|_____|_____
+         |     |
+      #{board_cell[4]}  |  #{board_cell[5]}  |  #{board_cell[6]}
+    _____|_____|_____
+         |     |
+      #{board_cell[7]}  |  #{board_cell[8]}  |  #{board_cell[9]}
+         |     |
+    "
+    end
+
+    it 'returns true if the actual game board is displayed' do
+      expect(game.display_game_board).to eql(true_board) 
+    end
+  end
 end
