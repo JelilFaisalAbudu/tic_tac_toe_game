@@ -79,6 +79,25 @@ describe Board do
     end
   end
 
+  context '#valid_ move?' do
+    it 'returns true if the position is within bounds and not yet taken' do
+      expect(game_board.valid_move?(2)).to eql(true)
+    end
+  end
+
+  context '#valid_ move?' do
+    it 'returns false if the position is within bounds but already taken' do
+      game_board.update_board('X', 7)
+      expect(game_board.valid_move?(7)).to eql(false)
+    end
+  end
+
+  context '#valid_ move?' do
+    it 'returns false if the position is out of bounds' do
+      expect(game_board.valid_move?(89)).to eql(false)
+    end
+  end
+
   context '#update_board' do
     it 'returns the player\'s marker of that index after it has been updated' do
       expect(game_board.update_board('X', 6)).to eql('X')
