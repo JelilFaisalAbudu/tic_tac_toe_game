@@ -71,4 +71,11 @@ describe Game do
       expect(game.draw?).to eql(false)
     end
   end
+
+  context '#reset_game_board' do
+    it 'returns true if the game board is reset for new game or replay' do
+      game.board_instance.board = ['', 'X', 'O', 'X', 'O', 'O', 'X', 'O', 'O', 'X']
+      expect(game.reset_game_board).to eql(['', 1, 2, 3, 4, 5, 6, 7, 8, 9])
+    end
+  end
 end
