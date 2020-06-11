@@ -109,4 +109,40 @@ describe Board do
       expect(game_board.update_board('X', 6)).not_to eql('O')
     end
   end
+
+  context '#win_comb' do
+    let(:this_comb) do
+      [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+        [1, 4, 7],
+        [2, 5, 8],
+        [3, 6, 9],
+        [1, 5, 9],
+        [3, 5, 7]
+      ]
+    end
+    it 'returns true if the win combinators match' do
+      expect(game_board.win_comb).to eql(this_comb)
+    end
+  end
+
+  context '#win_comb' do
+    let(:this_comb) do
+      [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+        [1, 4, 7],
+        [2, 5, 8],
+        [3, 6, 9],
+        [1, 5, 9],
+        [3, 5, 6]
+      ]
+    end
+    it 'returns false if the win combinators do not match' do
+      expect(game_board.win_comb).not_to eql(this_comb)
+    end
+  end
 end
