@@ -49,7 +49,7 @@ describe Board do
   end
 
   context '#display_board' do
-    it 'returns true if the wrong game board is displayed ' do
+    it 'returns false if the wrong game board is displayed ' do
       expect(game_board.display_board).not_to eql(false_board)
     end
   end
